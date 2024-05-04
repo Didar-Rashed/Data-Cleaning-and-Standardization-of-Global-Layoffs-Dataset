@@ -1,4 +1,4 @@
--- Data Cleaning -- shakil
+-- Data Cleaning -- 
 
 SELECT *
 FROM layoffs;
