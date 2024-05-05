@@ -74,3 +74,65 @@ SELECT *
 FROM layoffs_staging2
 where row_num > 1;
 
+-- Standerizing Data
+
+SELECT company, trim(company)
+FROM layoffs_staging2;
+
+UPDATE layoffs_staging2
+SET company = trim(company);
+
+SELECT DISTINCT industry
+FROM layoffs_staging2;
+
+
+UPDATE layoffs_staging2
+SET industry = 'Crypto'
+WHERE industry LIKE 'Crypto%';
+
+
+SELECT DISTINCT country, TRIM(country)
+FROM layoffs_staging2
+ORDER BY 1;
+
+SELECT DISTINCT country
+FROM layoffs_staging2
+WHERE country LIKE 'United States%';
+
+UPDATE layoffs_staging2
+SET country = TRIM(TRAILING '.' FROM country)
+WHERE country LIKE 'United States%';
+
+SELECT *
+FROM layoffs_staging2;
+
+-- Fixing date
+
+SELECT `date`
+FROM layoffs_staging2;
+
+UPDATE layoffs_staging2
+SET `date`= STR_TO_DATE(`date`, '%m/%d/%Y');
+
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN `date` DATE;
+
+-- Looking for null values
+
+SELECT *
+FROM layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+SELECT * 
+FROM layoffs_staging2
+WHERE percentage_laid_off IS NULL
+OR percentage_laid_off LIKE 'NULL';
+
+-- Remove any unusable columm
+
+ALTER TABLE layoffs_staging2
+DROP COLUMN row_num;
+
+SELECT * 
+FROM layoffs_staging2;
