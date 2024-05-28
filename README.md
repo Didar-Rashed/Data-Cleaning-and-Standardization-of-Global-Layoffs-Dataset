@@ -1,4 +1,4 @@
-# Data Cleaning in MySQL
+# Data Cleaning in SQL
 Compilation of SQL, data analysis related project and challenges where I practice those skills.
 
 ### Built with
