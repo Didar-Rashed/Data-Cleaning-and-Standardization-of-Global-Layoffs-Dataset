@@ -1,4 +1,4 @@
-# Data Cleaning in SQL
+# Data Cleaning and Standardization of Global Layoffs Dataset!
 Compilation of SQL, data analysis related project and challenges where I practice those skills.
 
 ### Built with
