@@ -4,10 +4,10 @@ Compilation of SQL, data analysis related project and challenges where I practic
 ### Built with
 
 + SQL Languages
-	+ SQL
+	+ MySQL
 
 + Tools
-	+ pgAdmin 4
+	+ MySQL Workbench
 
 ## Projects & Challenges
  
